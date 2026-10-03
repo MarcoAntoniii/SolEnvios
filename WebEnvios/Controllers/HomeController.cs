@@ -20,6 +20,7 @@ namespace WebEnvios.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult Procesar(string tipo, string nombre, decimal peso)
         {
             try
@@ -29,7 +30,7 @@ namespace WebEnvios.Controllers
             }
             catch (ArgumentException ex)
             {
-                TempData["Error"] = "Error al intentar hacer el proceso" + ex.Message;
+                TempData["Error"] = "Error al intentar hacer el proceso: " + ex.Message;
                 return View("Index");
             }
             }
