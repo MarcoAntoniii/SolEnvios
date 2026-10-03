@@ -21,12 +21,13 @@
         <label>Nombre del Destinatario</label>
         <input type="text" name="nombre" />
         <label>Peso</label>
-        <input type="number" name="peso" />
+        <input type="number" name="peso" step="any" />
         <label>Tipo de Servicio de Envio</label>
         <select name="tipo">
             <option value="estandar">Estándar</option>
             <option value="express">Express</option>
             <option value="mismodia">Mismo Día</option>
+            <option value="luego">Luego</option>
         </select>
         <button type="submit">Aceptar</button>
     </form>
@@ -37,8 +38,8 @@
             Destinatario: @Model.NombreDestinatario
             Peso:@Model.Peso
             Servicio:@Model.ObtenerEnvio()
-            Costo:@Model.CostoEnvio()
-            Días:@Model.EntregaDias
+            Costo:@Model.CostoEnvio().ToString("c")
+            Días:Llega en @Model.EntregaDias dias, el @DateTime.Today.AddDays(Model.EntregaDias).ToString("dd/MM/yyyy")
         </p>
     }
 </body>
