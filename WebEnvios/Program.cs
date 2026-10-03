@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<EnvioFactory>();
+builder.Services.AddScoped<B_Envio>();
 
 var app = builder.Build();
 

@@ -27,6 +27,10 @@ namespace Business
             {
                 throw new ArgumentException("El peso no puede ser menor a 0");
             }
+            if(peso > 30)
+            {
+                throw new ArgumentException("El peso no debe ser mayor a 30kg");
+            }
         }
     }
 }
