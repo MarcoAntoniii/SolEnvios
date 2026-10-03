@@ -4,7 +4,7 @@ namespace Business
 {
     public class EnvioFactory
     {
-        public E_Envio Crear(string tipo, E_Envio env)
+        public E_Envio Crear(string tipo, string nombre, decimal peso)
         {
             E_Envio envio;
 
@@ -25,8 +25,8 @@ namespace Business
                 throw new ArgumentException("No existe ese tipo de envio");
             }
 
-            envio.NombreDestinatario = env.NombreDestinatario;
-            envio.Peso = env.Peso;
+            envio.NombreDestinatario = nombre;
+            envio.Peso = peso;
 
             return envio;
         }
